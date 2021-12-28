@@ -18,8 +18,3 @@ while(True):
 
 
 print(result)
-    
-    
-        
-    
-
