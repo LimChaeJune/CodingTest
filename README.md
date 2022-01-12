@@ -12,37 +12,38 @@
 
 ### BFS 문제
 
-* 나이트의 이동
-* 미로탈출
-* 벽부수고이동하기
-* 인구이동
-* 케빈베이컨의법칙
-* 토마토
+* 나이트의 이동 - [7562번](https://www.acmicpc.net/problem/7562)
+* 미로탈출 - [16953번](https://www.acmicpc.net/problem/16953)
+* 벽부수고이동하기2 - [14442번](https://www.acmicpc.net/problem/14442)
+* 인구이동 - [16234번](https://www.acmicpc.net/problem/16234)
+* 케빈베이컨의법칙 - [16953번](https://www.acmicpc.net/problem/16953)
+* 토마토 - [7576번](https://www.acmicpc.net/problem/7576)
 
 ### DFS 문제
 
-* 알파벳 - 1987
-* 상근이의여행
-* 알파벳
-* 음료수 얼려먹기
+* 알파벳 - [1987번](https://www.acmicpc.net/problem/1987)
+* 상근이의여행 - [9372번](https://www.acmicpc.net/problem/9372)
+* 안전영역 - [2468번](https://www.acmicpc.net/problem/2468)
+* 음료수 얼려먹기 - [16953번](https://www.acmicpc.net/problem/16953)
 
 ### 그리디 문제
 
-* 회의실 배정 - 1931  
-* 설탕 배달 - 2839
-* 동전 - 11047
-* ATM - 11399
+* 회의실 배정 - [16953번](https://www.acmicpc.net/problem/16953)
+* 설탕 배달 - [16953번](https://www.acmicpc.net/problem/16953)
+* 동전 - [11047번](https://www.acmicpc.net/problem/11047)
+* ATM - [11399번](https://www.acmicpc.net/problem/11399)
 * A → B - [16953번](https://www.acmicpc.net/problem/16953)
-* 파일합치기3
-* 카드정렬하기
-* 잃어버린괄호
-* 수묶기
-* 신입사원
-* 바이트코인
-* 문서검색
-* 로프
-* 뒤집기
-* 공항
+* 파일합치기3 - [16953번](https://www.acmicpc.net/problem/16953)
+* 카드정렬하기 - [16953번](https://www.acmicpc.net/problem/16953)
+* 잃어버린괄호 - [16953번](https://www.acmicpc.net/problem/16953)
+* 수묶기 - [16953번](https://www.acmicpc.net/problem/16953)
+* 여행가자 - [1976번](https://www.acmicpc.net/problem/1976)
+* 신입사원 - [16953번](https://www.acmicpc.net/problem/16953)
+* 바이트코인 - [17521번](https://www.acmicpc.net/problem/17521)
+* 문서검색 - [16953번](https://www.acmicpc.net/problem/16953)
+* 로프 - [2217번](https://www.acmicpc.net/problem/2217)
+* 뒤집기 - [16953번](https://www.acmicpc.net/problem/16953)
+* 공항 - [10775번](https://www.acmicpc.net/problem/10775)
 
 ## 알고리즘
 
@@ -74,14 +75,17 @@
 힙에서는 항상 루트 노드(Root Node)를 제거
 
 * 시간 복잡도
+
     * 삽입: O(logN)
     * 삭제: O(logN)
 
 * 최소 힙 (min heap)
+
     * 루트 노드가 가장 작은 값을 가짐
     * 따라서 값이 작은 데이터가 우선적으로 제거 됨
 
 * 최대 힙 (max heap)
+
     * 루트 노드가 가장 큰 값을 가짐
     * 따라서 값이 큰 데이터가 우선적으로 제거 됨
 
