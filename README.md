@@ -51,9 +51,11 @@
 
 * itertools  
 반복되는 형태의 데이터를 처리하는 기능을 제공, 순열과 조합 라이브러리  
-  * permutations(data,r)
-  data중에서 r개의 데이터를 뽑아 모든 조합을 반환하는 함수 (순서 고려 순서 바뀐거도 다 포함)
-  * combinations(data,r)
+
+  * permutations(data,r)  
+  data중에서 r개의 데이터를 뽑아 모든 조합을 반환하는 함수 (순서 고려 순서 바뀐거도 다 포함)  
+
+  * combinations(data,r)  
   data중에서 r개의 데이터를 뽑아 모든 조합을 반환하는 함수 (순서 고려하지않음)
 
 * heapq  
@@ -64,7 +66,6 @@
 덱, 카운터 등 자료구조 포함하는 라이브러리
 * math
 수학적 기능을 제공하는 라이브러리
-
 
 ## 알고리즘
 
