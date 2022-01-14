@@ -21,8 +21,3 @@ for i in range(len(graph)):
         dp[idx] = graph[i][1]
 
 print(len(graph) - len(dp))
-
-
-    
-
-# print(result)
