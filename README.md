@@ -45,6 +45,27 @@
 * 뒤집기 - [16953번](https://www.acmicpc.net/problem/16953)
 * 공항 - [10775번](https://www.acmicpc.net/problem/10775)
 
+## 코딩테스트
+
+### 파이썬 라이브러리  
+
+* itertools  
+반복되는 형태의 데이터를 처리하는 기능을 제공, 순열과 조합 라이브러리  
+  * permutations(data,r)
+  data중에서 r개의 데이터를 뽑아 모든 조합을 반환하는 함수 (순서 고려 순서 바뀐거도 다 포함)
+  * combinations(data,r)
+  data중에서 r개의 데이터를 뽑아 모든 조합을 반환하는 함수 (순서 고려하지않음)
+
+* heapq  
+힙 기능을 제공하는 라이브러리 우선순위 큐 기능 구현
+* bisect  
+이진 탐색 기능을 제공하는 라이브러리
+* collections
+덱, 카운터 등 자료구조 포함하는 라이브러리
+* math
+수학적 기능을 제공하는 라이브러리
+
+
 ## 알고리즘
 
 ### Greedy
