@@ -12,8 +12,8 @@ def solution(newid):
     while '..' in answer:
         answer = answer.replace('..', '.')
 
-    answer = answer[1:] if answer[0] == '.' and len(answer) >= 1 else answer
-    answer = answer[:-1] if answer[-1] == '.' and len(answer) >= 1 else answer
+    answer = answer[1:] if answer[0] == '.' and len(answer) > 1 else answer
+    answer = answer[:-1] if answer[-1] == '.' else answer
 
     answer = 'a' if len(answer) == 0 else answer
     
