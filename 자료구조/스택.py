@@ -1,4 +1,8 @@
+import sys
 
+
+import sys
+input = sys.stdin.readline
 
 stack = []
 
@@ -12,7 +16,8 @@ for i in range(N):
     elif items[0] == 'top':
         if len(stack) == 0:
             print(-1)
-        print(stack[-1])
+        else:
+            print(stack[-1])
     elif items[0] == 'size':        
         print(len(stack))
     elif items[0] == 'empty':
