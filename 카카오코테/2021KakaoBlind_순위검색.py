@@ -19,8 +19,6 @@ def dfs(y,query,graph):
     
 def createcases(people):
     cases = {}    
-    
-
     return dict
 
 def solution(info,query):
@@ -40,7 +38,7 @@ def solution(info,query):
 
         answer.append(cnt)
 
-    answer.sort()    
+    answer.sort()  
     return answer
 
 solution(["java backend junior pizza 150","python frontend senior chicken 210", 

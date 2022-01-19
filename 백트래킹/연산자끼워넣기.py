@@ -23,15 +23,7 @@ def dfs(pl,mi,mul,divi, idx, value):
     if mul > 0:        
         dfs(pl,mi,mul-1,divi,idx+1, value*items[idx])        
     if divi > 0:
-        val = value//items[idx]      
-        val2 = value/items[idx]  
-
-        if value < 0 and items[idx] > 0 and val2 > val :
-            dfs(pl,mi,mul,divi-1,idx+1, val + 1)
-        else:
-            dfs(pl,mi,mul,divi-1,idx+1, value//items[idx])            
-    
-
+        dfs(pl,mi,mul,divi-1,idx+1, int(value/items[idx]))                
 
        
 dfs(oper[0],oper[1],oper[2],oper[3], 1, items[0])
