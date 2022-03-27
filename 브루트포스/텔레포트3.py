@@ -1,45 +1,45 @@
-from collections import deque
+import heapq
 
-xs, ys = map(int, input().split())
-xe, ye = map(int, input().split())
+xs,ys = map(int, input().split())
+xe,ye = map(int, input().split())
 
-port = []
-
-
-for i in range(3):
-    port.append(list(map(int,input().split())))
-  
-
-pos = [(1,0),(-1,0),(0,1),(0,-1)]
-
-answer = 0
-queue = deque()
-queue.append((xs, ys, 0))
-
+q = []
 visited = []
-while queue:
-    x, y, cnt = queue.popleft()
+nodes = []
 
-    if x == xe and y == ye:
-      answer = cnt
-      break
+nodes.append((xs,ys,False))
+nodes.append((xe,ye,False))
 
-    for i in port:
-        if i[0] == x and i[1] == y:
-            queue.append((i[2], i[3], cnt+10))
-            visited.append((x, y))
-        elif i[2] == x and i[3] == y:
-            queue.append((i[0], i[1], cnt+10))
-            visited.append((x, y))   
+graph = [[] for i in range(8)]
 
-    for po in pos:
-      dx = x + po[0]
-      dy = y + po[1]
+for i in range(0,5,2):
+  dx1,dy1, dx2,dy2 = map(int,input().split())
+  nodes.append((dx1,dy1,True))
+  nodes.append((dx2,dy2,True))    
+  graph[2+i].append((10, 2+i+1))
+  graph[2+i+1].append((10, 2+i))  
 
-      if dx < 0 or dy < 0 or (dx, dy) in visited:
-        continue
-      else:
-        queue.append((dx, dy, cnt+1))
-        visited.append((dx, dy))                      
+
+for i in range(len(nodes)):
+  for j in range(len(nodes)):    
+    graph[i].append((abs(nodes[i][0] - nodes[j][0]) + abs(nodes[i][1] - nodes[j][1]), j))    
+
+heapq.heappush(q, (0,0))
+answer = 0
+while True:
+  v, node = heapq.heappop(q)  
+
+  if nodes[node][0] == xe  and nodes[node][1] == ye:
+    answer = v
+    break
+
+  if (nodes[node][0], nodes[node][1]) in visited:
+    continue
+
+  visited.append((nodes[node][0], nodes[node][1]))           
+
+  for i in graph[node]:
+    heapq.heappush(q, (v+i[0],i[1]))
+
 
 print(answer)
