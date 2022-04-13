@@ -1,25 +1,42 @@
 from collections import deque
 
-N = int(input())
-
-graph = [[0 for i in range(N)] for _ in range(N)]
-
-shark = []
-fishes = []
+N =  input()
+shark = 2
+sharkX = -1
+sharkY = -1
+board = []
+fishes = [0] * (N + 1)
+pos = [(0,1),(1,0),(0,-1),(-1,0)]
 
 for i in range(N):
-    row = list(map(int, input().split()))
-    graph.append(row)
-    for j in range(len(row)):
-        if row[j] == 9:
-            shark.append((i,j))
-        elif 0 < row[j] < 7:
-            fishes.append((row[j], (i,j)))
+  values = list(map(int,input().split()))
+  board.append(values)
+  for j in range(values):
+    if values[j] == 9:
+      sharkX, sharkY = i, j      
+    if 7 > values[j] > 0:
+      fishes[j] += 1
 
-queue = deque()
-queue.append((shark[0],0))
+if fishes[1] == 0:
+  print(0)
+  exit()
 
-while queue:
-    x,y, T = queue.popleft()
-    
-    
+def bfs():
+  visited = [[[False] * N] for _ in range(N)]
+  
+  queue = deque
+  queue.append((sharkX,sharkY,0))  
+  visited[sharkX][sharkY] = 1
+  
+  while True:    
+    x,y,cnt = queue.popleft()
+    for i in range(4):
+      dx = x + pos[i][0]
+      dy = y + pos[i][1]
+
+      if 0 <= dx < N and 0 <= dy <N:
+        graph[dx][dy] <= shark
+        
+EatFish = 0
+while True:
+  value = bfs()
