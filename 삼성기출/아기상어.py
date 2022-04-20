@@ -1,6 +1,6 @@
 from collections import deque
 
-<<<<<<< HEAD
+
 N = int(input())
 # 아기상어 좌표 뚜루루뚜루
 sharkx, sharky = -1, -1
