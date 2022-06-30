@@ -20,7 +20,7 @@ posx = [0, 0, 1, -1]
 posy = [1, -1, 0, 0]
 
 
-def bfs(copyboard, queue):
+def bfs(visited, copyboard, queue):
     while queue:
         x, y, z = queue.popleft()
 
@@ -28,10 +28,15 @@ def bfs(copyboard, queue):
             dx = x + posx[i]
             dy = y + posy[i]
 
-            if 0 <= dx < N and 0 <= dy < N:
+            if 0 <= dx < N and 0 <= dy < N and visited[dx][dy] == False:
                 if copyboard[dx][dy] == 0:
                     copyboard[dx][dy] = z+1
                     queue.append((dx, dy, z+1))
+                    visited[dx][dy] = True
+                elif copyboard[dx][dy] == 2:
+                    copyboard[dx][dy] = 2
+                    queue.append((dx, dy, z+1))
+                    visited[dx][dy] = True
 
     maxtime = 0
     # 퍼지는 시간 계산
@@ -59,7 +64,11 @@ for comb in combinations(virus, M):
     # 새 조합일때마다 board  copy
     copyboard = [item[:] for item in origin]
 
-    bfsResult = bfs(copyboard, queue)
+    visited = [[False for _ in range(N)]for _ in range(N)]
+    for x, y in comb:
+        visited[x][y] = True
+    # bfs 작동
+    bfsResult = bfs(visited, copyboard, queue)
     if bfsResult != -1:
         result = min(result, bfsResult)
 
