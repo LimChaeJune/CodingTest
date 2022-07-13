@@ -46,7 +46,7 @@ console.log(horseboard)
 
 while (result < 1001){
 
-
+    
     result++;
 }
 
