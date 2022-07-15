@@ -119,3 +119,26 @@ for(var i=0; i< N; i++){
     horseboard[i][j] = new Array();
   }
 }
+
+function getPermutations(array, size) {
+
+    function p(t, i) {
+        if (t.length === size) {
+            result.push(t);
+            return;
+        }
+        if (i + 1 > array.length) {
+            return;
+        }
+        p(t.concat(array[i]), i + 1);
+        p(t, i + 1);
+    }
+
+    var result = [];
+    p([], 0);
+    return result;
+}
+
+var array = ['a', 'b', 'c', 'd'];
+
+console.log(getPermutations(array, 2));
