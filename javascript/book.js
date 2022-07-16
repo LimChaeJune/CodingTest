@@ -1,3 +1,8 @@
+//입력
+let fs = require('fs');
+let input = fs.readFileSync('test.txt').toString().split(' ');
+
+
 // Basic usage example
 import Heap from 'heap-js';
 
@@ -120,6 +125,7 @@ for(var i=0; i< N; i++){
   }
 }
 
+// itertools
 function getPermutations(array, size) {
 
     function p(t, i) {
@@ -142,3 +148,10 @@ function getPermutations(array, size) {
 var array = ['a', 'b', 'c', 'd'];
 
 console.log(getPermutations(array, 2));
+
+// isalpha
+const regex = /^[a-z|A-Z]+$/;
+const isNumber = /^[0-9]+$/;
+
+// 숫자인지 확인
+isNaN(num)    
