@@ -155,3 +155,35 @@ const isNumber = /^[0-9]+$/;
 
 // 숫자인지 확인
 isNaN(num)    
+
+// 이진탐색 / 이분탐색
+function binary_search(start,end,target,list){
+    if (start > end){
+        return -1;
+    }
+
+    const mid = Math.floor((start + end) / 2)
+
+    if (list[mid] === target){
+        return mid;
+    }
+    else if (list[mid] < target){
+        return binary_search(start, mid-1, target, list);
+    }
+    else if (list[mid] > target){
+        return binary_search(mid+1, end, target, list);
+    }
+}
+// lower_bound, upper_bound
+// from bisect import bisect_left, bisect_right
+print(bisect_left(array, 50)) 
+print(bisect_right(array, 50))
+
+// 값이 특점 범위에 속하는 데이터 개수
+
+function count_by_range(a, left_value, right_value){
+    const right_index = bisect_right(a, right_value);
+    const left_index = bisect_left(a, left_value);
+
+    return right_index - left_index;
+}
