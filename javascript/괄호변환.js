@@ -1,28 +1,29 @@
 function solution(p) {
-    function isCorrect(w){
-        let left = 0;
-        let right = 0;
-        for (let i = 0; i < w.length; i++){
-            if (w[i] === '('){
-                left++;
+
+    var answer = '';
+    
+    if (p === ""){
+        return answer;
+    }
+
+    function isCorrect(w){                
+        const cnt =  0;
+        for (let i =0; i < w.length; i++){            
+            if (w[i] == '('){
+                cnt += 1;
             }
             else{
-                right++;
-                if (right > left){
+                if (cnt == 0){
                     return false;
                 }
-            }            
-        }
-        return true;
-    }    
+                else{
+                    cnt -= 1;
+                }
+            }                        
+        }    
 
-    if (p === ''){
-        return '';
-    }
-
-    if (isCorrect(p)){
-        return p;
-    }
+        return true;    
+    }   
 
     let balance = 0;
     for (let i =0; i < p.length; i++){

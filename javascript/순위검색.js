@@ -9,19 +9,18 @@ function solution(info, query) {
     let comb = {}
     
     function combination(score, comb, item, start){
-        const key = item.join("");
+        const key = item.join("");        
 
         if (comb[key]){
             comb[key].push(score);            
         }
         else{
-            comb[key] = [score];
-
-            for (let i = start; i < item.length; i++){
-                let item_slice = item.slice();
-                item_slice[i] = "-";
-                combination(score, comb, item_slice, i + 1);                
-            }
+            comb[key] = [score];           
+        }
+        for (let i = start; i < item.length; i++){
+            let item_slice = item.slice();
+            item_slice[i] = "-";
+            combination(score, comb, item_slice, i + 1);                
         }
     }    
         
@@ -61,7 +60,7 @@ function solution(info, query) {
         const score = Number(query_item.pop());
         answer.push(binary_search(comb, query_item.join(""), score));
     }
+        
     
-    console.log(answer);
     return answer;
 }
