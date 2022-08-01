@@ -22,7 +22,7 @@ function solution(n, arr1, arr2) {
         var taew = newboard[i].reverse().map(e => e === 1 ? "#" : " ").join("");
         answer.push(taew);
     }
-    console.log(answer);
+
     return answer;
 }
 

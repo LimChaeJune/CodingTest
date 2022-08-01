@@ -1,6 +1,22 @@
-//입력
+// 입력
 let fs = require('fs');
-let input = fs.readFileSync('test.txt').toString().split(' ');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
+let count = input[0];
+let numbers = [];
+
+for (let i = 1; i < input.length; i++) {
+  if (input[i] !== '') {
+    numbers.push(input[i].split(' '));
+  }
+}
+
+for (let i = 0; i < numbers.length; i++){
+  let num1 = Number(numbers[i][0]);
+  let num2 = Number(numbers[i][1]);
+
+  console.log(num1 + num2);
+}
 
 
 // Basic usage example
@@ -125,7 +141,6 @@ for(var i=0; i< N; i++){
   }
 }
 
-// itertools
 function getPermutations(array, size) {
 
     function p(t, i) {
@@ -147,43 +162,27 @@ function getPermutations(array, size) {
 
 var array = ['a', 'b', 'c', 'd'];
 
-console.log(getPermutations(array, 2));
 
-// isalpha
-const regex = /^[a-z|A-Z]+$/;
-const isNumber = /^[0-9]+$/;
-
-// 숫자인지 확인
-isNaN(num)    
-
-// 이진탐색 / 이분탐색
-function binary_search(start,end,target,list){
-    if (start > end){
-        return -1;
-    }
-
-    const mid = Math.floor((start + end) / 2)
-
-    if (list[mid] === target){
+const binarySearch = (list, target, left, right) => {
+    let mid = 0;
+  
+    while (left <= right) {
+      // 가운데 인덱스
+      mid = Math.floor((left + right) / 2);
+  
+      if (list[mid] === target) {
         return mid;
+      }
+      
+      // 대소 비교로 범위 지정
+      if (list[mid] > target) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
+      }
     }
-    else if (list[mid] < target){
-        return binary_search(start, mid-1, target, list);
-    }
-    else if (list[mid] > target){
-        return binary_search(mid+1, end, target, list);
-    }
-}
-// lower_bound, upper_bound
-// from bisect import bisect_left, bisect_right
-print(bisect_left(array, 50)) 
-print(bisect_right(array, 50))
+  
+    return -1;
+  }
 
-// 값이 특점 범위에 속하는 데이터 개수
-
-function count_by_range(a, left_value, right_value){
-    const right_index = bisect_right(a, right_value);
-    const left_index = bisect_left(a, left_value);
-
-    return right_index - left_index;
-}
+console.log(getPermutations(array, 2));
